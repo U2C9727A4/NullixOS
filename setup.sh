@@ -41,7 +41,7 @@ read username
 echo "User is set! Now lets talk about partitions bud."
 echo "NullixOS requires 3 partitions. One for boot related stuff, One for the root and another for home."
 echo "Everything on those partitions will be removed. Please backup important data before using this script."
-gum confirm "Have you created the necesarry partitions?" || exit
+gum confirm "Have you created the necesarry partitions?" || echo "Please create all partitions first, and then re-run the script." && exit
 echo "So, Whats the boot partition? (NullixOS currently works ONLY on UEFI. x86_64)""
 echo "Boot Partition location (Eg. /dev/sda1): "
 read bootpart
