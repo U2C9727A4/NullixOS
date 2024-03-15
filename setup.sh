@@ -65,7 +65,7 @@ grub-mkconfig -o /bootfs/grub/grub.cfg
 grub-mkconfig -o /boot/grub/grub.cfg
 bootdev=$(lsblk -no pkname ${bootpart})
 efibootmgr --create --disk /dev/${bootdev} --part ${bootpartnum} --loader /efi/EFI/Void/grubx64.efi --label "NullixOS"
-xbps-install -Syu
+xbps-install -Syu linux
 echo "Boot setup done!"
 mkfs.ext4 ${homepart}
 mount ${homepart} /home
